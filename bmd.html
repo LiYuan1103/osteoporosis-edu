@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="認識骨密度檢查、DXA 與 T 值、Z 值的意義。" />
+    <title>骨密度檢查</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="topbar">
+        <a class="brand" href="index.html">骨質疏鬆衛教</a>
+        <div class="toolbar" aria-label="字級調整">
+          <span class="toolbar-label">字級：</span>
+          <button type="button" class="size-button" data-size-button="small" aria-label="小字級" aria-pressed="false">小</button>
+          <button type="button" class="size-button active" data-size-button="medium" aria-label="中字級" aria-pressed="true">中</button>
+          <button type="button" class="size-button" data-size-button="large" aria-label="大字級" aria-pressed="false">大</button>
+        </div>
+      </div>
+      <nav class="navbar" aria-label="主導覽">
+        <div class="nav-inner">
+          <a class="nav-link" href="index.html">首頁</a>
+          <a class="nav-link" href="what-is.html">什麼是骨質疏鬆</a>
+          <a class="nav-link" href="self-check.html">風險自我檢測</a>
+          <a class="nav-link active" href="bmd.html">骨密度檢查</a>
+          <a class="nav-link" href="treatment.html">治療藥物</a>
+          <a class="nav-link" href="lifestyle.html">生活保健</a>
+          <a class="nav-link" href="faq.html">常見問答</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <div class="review-pending">本頁內容待醫師審閱</div>
+
+      <article class="content-card">
+        <h1>骨密度檢查</h1>
+        <p>骨密度檢查可協助確認骨骼的礦物質密度，幫助醫師判斷是否有骨質疏鬆的風險與程度。</p>
+
+        <h2>DXA 是什麼</h2>
+        <p>DXA（雙能 X 光吸收測定）是常見的骨密度檢查方式。檢查通常在特定儀器進行，時間短，輻射量相對低，適合評估骨質狀態。</p>
+
+        <h2>檢查過程</h2>
+        <ul>
+          <li>幾乎不需要準備，通常可穿著輕便衣物</li>
+          <li>會在檢查床上躺著，身體特定位置接受掃描</li>
+          <li>檢查通常很快，依醫院安排而定</li>
+          <li>報告會由醫師解讀，並依情況討論後續照護</li>
+        </ul>
+
+        <h2>T 值與 Z 值的意思</h2>
+        <p>T 值是和年輕健康族群比較的結果；Z 值是和同年齡、同性別族群比較的結果。</p>
+
+        <div class="range-list">
+          <div class="range-row">
+            <strong>T ≥ −1.0</strong>
+            <span>正常</span>
+          </div>
+          <div class="range-row">
+            <strong>−1.0 到 −2.5</strong>
+            <span>骨質缺乏</span>
+          </div>
+          <div class="range-row">
+            <strong>≤ −2.5</strong>
+            <span>骨質疏鬆</span>
+          </div>
+        </div>
+
+        <figure class="chart-card">
+          <svg class="dxa-chart" viewBox="0 0 420 180" role="img" aria-label="骨密度分級示意圖：正常、骨質缺乏、骨質疏鬆">
+            <title>骨密度分級示意圖</title>
+            <rect x="30" y="28" width="360" height="110" fill="#f5fafb" stroke="#dbe5e7" rx="12"/>
+            <line x1="60" y1="120" x2="360" y2="120" stroke="#1f5d6b" stroke-width="2"/>
+            <line x1="60" y1="120" x2="60" y2="40" stroke="#1f5d6b" stroke-width="2"/>
+            <rect x="70" y="75" width="95" height="45" fill="#7cc8a0" rx="8"/>
+            <rect x="175" y="82" width="105" height="38" fill="#f7d97d" rx="8"/>
+            <rect x="290" y="90" width="70" height="30" fill="#d96969" rx="8"/>
+            <text x="117" y="150" text-anchor="middle" fill="#153f4c" font-size="14">正常</text>
+            <text x="227" y="150" text-anchor="middle" fill="#153f4c" font-size="14">骨質缺乏</text>
+            <text x="325" y="150" text-anchor="middle" fill="#153f4c" font-size="14">骨質疏鬆</text>
+            <text x="60" y="32" fill="#153f4c" font-size="12">T 值</text>
+            <text x="70" y="65" fill="#153f4c" font-size="12">T ≥ −1.0</text>
+            <text x="175" y="75" fill="#153f4c" font-size="12">−1.0 到 −2.5</text>
+            <text x="290" y="85" fill="#153f4c" font-size="12">≤ −2.5</text>
+          </svg>
+        </figure>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>本網站內容僅供衛教參考，不能取代醫師診斷與治療。如有疑問請諮詢您的醫師。</p>
+        <div class="print-url">https://LiYuan1103.github.io/osteoporosis-edu/</div>
+      </div>
+    </footer>
+
+    <script src="assets/js/font-size.js"></script>
+  </body>
+</html>
