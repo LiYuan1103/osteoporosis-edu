@@ -11,24 +11,42 @@
     <header class="site-header">
       <div class="topbar">
         <a class="brand" href="index.html">骨質疏鬆衛教</a>
-        <div class="toolbar" aria-label="字級調整">
-          <span class="toolbar-label">字級：</span>
-          <button type="button" class="size-button" data-size-button="small" aria-label="小字級" aria-pressed="false">小</button>
-          <button type="button" class="size-button active" data-size-button="medium" aria-label="中字級" aria-pressed="true">中</button>
-          <button type="button" class="size-button" data-size-button="large" aria-label="大字級" aria-pressed="false">大</button>
-        </div>
-      </div>
-      <nav class="navbar" aria-label="主導覽">
-        <div class="nav-inner">
+        <nav class="navbar desktop-navbar" aria-label="主導覽（桌機）">
+          <div class="nav-inner nav-inline">
           <a class="nav-link" href="index.html">首頁</a>
           <a class="nav-link" href="what-is.html">什麼是骨質疏鬆</a>
           <a class="nav-link" href="self-check.html">風險自我檢測</a>
           <a class="nav-link" href="bmd.html">骨密度檢查</a>
           <a class="nav-link" href="treatment.html">治療藥物</a>
-          <a class="nav-link active" href="lifestyle.html">生活保健</a>
+          <a class="nav-link active" href="lifestyle.html" aria-current="page">生活保健</a>
           <a class="nav-link" href="faq.html">常見問答</a>
+          </div>
+        </nav>
+        <div class="header-actions">
+          <details class="header-disclosure font-disclosure" data-disclosure>
+            <summary class="header-action-button" aria-expanded="false">字級</summary>
+            <div class="disclosure-panel toolbar" aria-label="字級調整">
+              <button type="button" class="size-button" data-size-button="small" aria-label="小字級" aria-pressed="false">小</button>
+              <button type="button" class="size-button active" data-size-button="medium" aria-label="中字級" aria-pressed="true">中</button>
+              <button type="button" class="size-button" data-size-button="large" aria-label="大字級" aria-pressed="false">大</button>
+            </div>
+          </details>
+          <details class="header-disclosure menu-disclosure" data-disclosure>
+            <summary class="header-action-button" aria-expanded="false">選單 <span aria-hidden="true">☰</span></summary>
+            <nav class="disclosure-panel mobile-nav" aria-label="主導覽（手機）">
+              <div class="nav-list">
+          <a class="nav-link" href="index.html" data-nav-link>首頁</a>
+          <a class="nav-link" href="what-is.html" data-nav-link>什麼是骨質疏鬆</a>
+          <a class="nav-link" href="self-check.html" data-nav-link>風險自我檢測</a>
+          <a class="nav-link" href="bmd.html" data-nav-link>骨密度檢查</a>
+          <a class="nav-link" href="treatment.html" data-nav-link>治療藥物</a>
+          <a class="nav-link active" href="lifestyle.html" aria-current="page" data-nav-link>生活保健</a>
+          <a class="nav-link" href="faq.html" data-nav-link>常見問答</a>
+              </div>
+            </nav>
+          </details>
         </div>
-      </nav>
+      </div>
     </header>
 
     <main class="page-shell">
@@ -36,7 +54,7 @@
 
       <article class="content-card">
         <h1>生活保健</h1>
-        <p>骨骼健康需要長期照護，包括飲食、運動、跌倒防護與生活節奏調整。</p>
+        <p class="page-intro">骨骼健康需要長期照護，包括飲食、運動、跌倒防護與生活節奏調整。</p>
 
         <h2>營養與日常支持</h2>
         <ul>
@@ -67,6 +85,11 @@
           <label><input type="checkbox" /> 需要外出時，是否已檢查鞋底與步行環境</label>
         </div>
       </article>
+
+      <nav class="page-pagination skip-print" aria-label="上下頁導覽">
+        <a class="page-nav-button prev" href="treatment.html">← 上一頁<span>治療藥物</span></a>
+        <a class="page-nav-button next" href="faq.html"><span>常見問答</span>下一頁 →</a>
+      </nav>
     </main>
 
     <footer class="footer">
