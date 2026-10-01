@@ -17,7 +17,7 @@
       return {
         label: '低風險',
         className: 'risk-low',
-        text: '目前屬於低風險，仍建議維持健康生活方式與適當追蹤。',
+        text: '目前屬於低風險，表示依 OSTA 篩檢結果風險較低。',
         showAdvice: false
       };
     }
@@ -26,7 +26,7 @@
       return {
         label: '中度風險',
         className: 'risk-medium',
-        text: '中度風險，建議和醫師討論是否需要做骨密度檢查。',
+        text: '目前屬於中度風險，表示依 OSTA 篩檢結果需要多留意。',
         showAdvice: true
       };
     }
@@ -34,7 +34,7 @@
     return {
       label: '高風險',
       className: 'risk-high',
-      text: '高風險，建議和醫師討論是否需要做骨密度檢查。',
+      text: '目前屬於高風險，表示依 OSTA 篩檢結果屬於較高風險族群。',
       showAdvice: true
     };
   }
@@ -48,7 +48,8 @@
       resultLevel.textContent = '請輸入有效年齡與體重';
       resultText.textContent = '請先輸入年齡與體重，計算結果會顯示在這裡。';
       if (resultPill) {
-        resultPill.className = 'risk-pill risk-medium';
+        resultPill.className = 'risk-pill risk-neutral';
+        resultPill.textContent = '請輸入資料';
       }
       if (riskNote) {
         riskNote.hidden = true;

@@ -279,6 +279,11 @@ main {
   padding: 1.25rem;
 }
 
+.chart-card {
+  margin: 1rem 0 0;
+  padding: 0.75rem;
+}
+
 .info-card ul,
 .content-card ul,
 .content-card ol {
@@ -322,6 +327,11 @@ main {
 .risk-low {
   background: var(--success-bg);
   color: var(--success);
+}
+
+.risk-neutral {
+  background: #edf2f4;
+  color: var(--muted);
 }
 
 .risk-medium {
@@ -419,8 +429,8 @@ main {
 
 .dxa-chart {
   width: 100%;
-  max-width: 420px;
-  margin: 1rem auto;
+  max-width: none;
+  margin: 1rem 0;
 }
 
 .range-list {
