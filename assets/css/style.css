@@ -409,6 +409,7 @@ main {
   background: #fff;
   text-decoration: none;
   box-shadow: 0 4px 12px rgba(17, 35, 42, 0.04);
+  transition: transform 0.15s ease, border-color 0.15s ease;
 }
 
 .quick-link-card:hover,
