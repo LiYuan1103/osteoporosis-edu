@@ -322,7 +322,7 @@ main {
 .page-intro {
   margin-top: 0.35rem;
   font-size: 1.1rem;
-  color: var(--muted) !important;
+  color: var(--muted);
 }
 
 .button-row,
