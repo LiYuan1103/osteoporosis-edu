@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="骨質疏鬆風險自我檢測：使用 OSTA 公式快速概估風險。" />
+    <title>風險自我檢測</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="topbar">
+        <a class="brand" href="index.html">骨質疏鬆衛教</a>
+        <div class="toolbar" aria-label="字級調整">
+          <span class="toolbar-label">字級：</span>
+          <button type="button" class="size-button" data-size-button="small" aria-label="小字級" aria-pressed="false">小</button>
+          <button type="button" class="size-button active" data-size-button="medium" aria-label="中字級" aria-pressed="true">中</button>
+          <button type="button" class="size-button" data-size-button="large" aria-label="大字級" aria-pressed="false">大</button>
+        </div>
+      </div>
+      <nav class="navbar" aria-label="主導覽">
+        <div class="nav-inner">
+          <a class="nav-link" href="index.html">首頁</a>
+          <a class="nav-link" href="what-is.html">什麼是骨質疏鬆</a>
+          <a class="nav-link active" href="self-check.html">風險自我檢測</a>
+          <a class="nav-link" href="bmd.html">骨密度檢查</a>
+          <a class="nav-link" href="treatment.html">治療藥物</a>
+          <a class="nav-link" href="lifestyle.html">生活保健</a>
+          <a class="nav-link" href="faq.html">常見問答</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      <div class="review-pending">本頁內容待醫師審閱</div>
+
+      <article class="content-card">
+        <h1>風險自我檢測</h1>
+        <p>這個工具用於簡單篩檢骨質疏鬆風險，適合作為初步了解，不用於做出最終診斷。</p>
+
+        <form id="osta-form" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="age">年齡（歲）</label>
+              <input id="age" name="age" type="number" min="1" inputmode="numeric" placeholder="例如：70" />
+            </div>
+            <div class="field">
+              <label for="weight">體重（公斤）</label>
+              <input id="weight" name="weight" type="number" min="1" inputmode="decimal" placeholder="例如：50" />
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" class="primary-button">計算風險</button>
+          </div>
+        </form>
+
+        <div class="risk-box" aria-live="polite">
+          <p>OSTA 分數</p>
+          <div class="risk-value" id="osta-result-value">—</div>
+          <span class="risk-pill risk-neutral" id="risk-pill">請輸入資料</span>
+          <p id="osta-result-level" style="margin-top: 1rem; font-weight: 700;">請先輸入年齡與體重</p>
+          <p id="osta-result-text">結果會在這裡顯示。</p>
+        </div>
+
+        <div class="inline-note">
+          <p>公式：OSTA = （體重 − 年齡）× 0.2，取到小數第一位</p>
+          <p>風險分級：大於 −1 為低風險；−4 到 −1（含）為中度風險；小於 −4 為高風險</p>
+        </div>
+
+        <div class="highlight" id="risk-note" hidden>
+          建議和醫師討論是否需要做骨密度檢查。
+        </div>
+
+        <div class="highlight">
+          這個工具原本是為亞洲停經後女性設計的，只能初步篩檢，不能取代骨密度檢查和醫師評估。
+        </div>
+
+        <p style="color: var(--muted);">
+          <a href="https://frax.shef.ac.uk/FRAX/" target="_blank" rel="noopener noreferrer">FRAX 骨折風險評估</a>
+          <!-- TODO: 醫師確認是否改用指定的 FRAX 連結 -->
+        </p>
+
+        <p class="inline-note">這個計算只在瀏覽器裡進行，不會送出、不儲存任何資料。</p>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>本網站內容僅供衛教參考，不能取代醫師診斷與治療。如有疑問請諮詢您的醫師。</p>
+        <div class="print-url">https://LiYuan1103.github.io/osteoporosis-edu/</div>
+      </div>
+    </footer>
+
+    <script src="assets/js/font-size.js"></script>
+    <script src="assets/js/self-check.js"></script>
+  </body>
+</html>
