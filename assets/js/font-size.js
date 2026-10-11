@@ -3,6 +3,20 @@
   const sizes = ['small', 'medium', 'large'];
   const root = document.documentElement;
   const disclosureSelector = '[data-disclosure]';
+  let printDisclosureState = null;
+
+  // Print every FAQ answer, then restore the reader's original open/closed state.
+  window.addEventListener('beforeprint', () => {
+    if (printDisclosureState) return;
+    printDisclosureState = Array.from(document.querySelectorAll('.faq-item'))
+      .map(item => [item, item.open]);
+    printDisclosureState.forEach(([item]) => { item.open = true; });
+  });
+  window.addEventListener('afterprint', () => {
+    if (!printDisclosureState) return;
+    printDisclosureState.forEach(([item, wasOpen]) => { item.open = wasOpen; });
+    printDisclosureState = null;
+  });
 
   function applySize(size) {
     const selected = sizes.includes(size) ? size : 'medium';
@@ -103,3 +117,4 @@
     });
   });
 })();
+
