@@ -590,7 +590,7 @@ main {
 
 .range-row {
   display: grid;
-  grid-template-columns: 110px 1fr;
+  grid-template-columns: minmax(180px, 1fr) 1fr;
   gap: 0.8rem;
   align-items: center;
 }
@@ -782,4 +782,22 @@ main {
     color: #000;
     text-decoration: none;
   }
+}
+
+
+/* Keep clinical scope choices and source links readable on narrow screens. */
+.field select {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 0.6rem;
+}
+.clinical-sources {
+  margin-top: 1rem;
+  overflow-wrap: anywhere;
+}
+@media print {
+  .review-pending { display: block !important; }
+  h2, h3, summary { break-after: avoid; }
+  .range-row { break-inside: avoid; }
 }

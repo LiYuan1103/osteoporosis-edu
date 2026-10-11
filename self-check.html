@@ -54,17 +54,25 @@
 
       <article class="content-card">
         <h1>風險自我檢測</h1>
-        <p class="page-intro">這個工具用於簡單篩檢骨質疏鬆風險，適合作為初步了解，不用於做出最終診斷。</p>
+        <p class="page-intro">OSTA 用年齡和體重篩檢低骨密度的可能性，不能診斷骨鬆，也不是未來骨折機率。本頁限 50 歲以上亞洲停經後女性使用；男性、未停經女性、已確診或正在治療骨鬆者，請直接與醫師討論。</p>
 
         <form id="osta-form" novalidate>
+          <div class="field">
+            <label for="osta-eligible">適用族群確認</label>
+            <select id="osta-eligible" name="osta-eligible" required>
+              <option value="">請選擇</option>
+              <option value="yes">我符合上方全部條件</option>
+              <option value="no">不符合，或不確定</option>
+            </select>
+          </div>
           <div class="form-grid">
             <div class="field">
               <label for="age">年齡（歲）</label>
-              <input id="age" name="age" type="number" min="1" inputmode="numeric" placeholder="例如：70" />
+              <input id="age" name="age" type="number" min="50" max="120" step="1" required inputmode="numeric" placeholder="例如：70" />
             </div>
             <div class="field">
               <label for="weight">體重（公斤）</label>
-              <input id="weight" name="weight" type="number" min="1" inputmode="decimal" placeholder="例如：50" />
+              <input id="weight" name="weight" type="number" min="0.1" max="300" step="any" required inputmode="decimal" placeholder="例如：50" />
             </div>
           </div>
 
@@ -82,7 +90,7 @@
         </div>
 
         <div class="inline-note">
-          <p>公式：OSTA = （體重 − 年齡）× 0.2，取到小數第一位</p>
+          <p>公式：OSTA =（體重公斤 − 足歲年齡）× 0.2，去掉小數部分、朝 0 取整數，不是四捨五入。例如 −1.8 記為 −1，−4.8 記為 −4</p>
           <p>風險分級：大於 −1 為低風險；−4 到 −1（含）為中度風險；小於 −4 為高風險</p>
         </div>
 
@@ -91,16 +99,35 @@
         </div>
 
         <div class="highlight">
-          這個工具原本是為亞洲停經後女性設計的，只能初步篩檢，不能取代骨密度檢查和醫師評估。
+          低風險不代表沒有骨鬆。曾有輕微外力骨折、身高明顯變矮、長期用類固醇，或有其他高風險因素者，不論分數多少都應就醫評估；女性 65 歲以上也應討論 DXA，不能用低分級取消檢查。
         </div>
 
-        <p style="color: var(--muted);">
-          <a href="https://frax.shef.ac.uk/FRAX/" target="_blank" rel="noopener noreferrer">FRAX 骨折風險評估</a>
-          <!-- TODO: 醫師確認是否改用指定的 FRAX 連結 -->
-        </p>
+        <p class="inline-note">50 歲下限是本網站的服務範圍；120 歲與 300 公斤上限僅用於防止誤輸，並非宣稱 OSTA 在所有極端年齡、體重均已驗證。非典型情況請由醫師評估。</p>
 
-        <p class="inline-note">這個計算只在瀏覽器裡進行，不會送出、不儲存任何資料。</p>
+        <h2>FRAX：看未來 10 年的骨折機率</h2>
+        <p><a href="https://www.fraxplus.org/zh-Hant/calculation-tool/" target="_blank" rel="noopener noreferrer">開啟官方 FRAX 繁體中文工具</a>，請確認選用 Taiwan（台灣）模型；語言選中文不等於已選台灣模型。外部工具的操作與資料處理依其網站說明。</p>
+        <ul>
+          <li>計算年齡範圍為 40–90 歲；範圍外不能把邊界年齡的結果當成自己的精準機率。</li>
+          <li>結果包含髖部骨折，以及主要骨鬆性骨折（髖部、臨床脊椎、前臂、近端肱骨）的 10 年機率，與 OSTA 分級不同。</li>
+          <li>可不輸入骨密度；若輸入，只能用股骨頸 DXA 資料，不能用腰椎、全髖或腳跟超音波數字代替。T 值參考資料庫不確定時，請醫師協助。</li>
+          <li>一般 FRAX 對近期或多次骨折、反覆跌倒、第二型糖尿病、較高類固醇劑量，以及腰椎比股骨頸更低的骨密度，可能低估風險，需醫師補充判斷。</li>
+          <li>FRAX 不能用來監測藥物療效或自行決定停藥。已接受治療者仍可由醫師在特定情境判讀，並非完全不能使用。</li>
+          <li>風險百分比不是健保給付資格；已有脆弱性骨折者，不應等分數超過某個門檻才就醫。</li>
+        </ul>
+
+        <p class="inline-note">本站 OSTA 輸入只在瀏覽器內計算，不會送出或儲存年齡、體重與族群選項。</p>
       </article>
+
+      <section class="content-card clinical-sources" aria-label="資料來源">
+        <h2>資料來源與更新</h2>
+        <p>資料查核：2026/10/11。本頁內容待醫師審閱。</p>
+        <ul>
+          <li><a href="https://pubmed.ncbi.nlm.nih.gov/11580084/" target="_blank" rel="noopener noreferrer">Koh 等：OSTA 原始研究（2001）</a></li>
+          <li><a href="https://www.mdpi.com/1660-4601/13/10/995" target="_blank" rel="noopener noreferrer">OSTA 整數計分及分級：台灣創傷病人原始研究（2016）</a></li>
+          <li><a href="https://www.fraxplus.org/faq" target="_blank" rel="noopener noreferrer">FRAX 官方使用限制與常見問答</a></li>
+          <li><a href="https://iscd.org/official-positions-2023/" target="_blank" rel="noopener noreferrer">ISCD：骨密度檢查適應情境</a></li>
+        </ul>
+      </section>
 
       <nav class="page-pagination skip-print" aria-label="上下頁導覽">
         <a class="page-nav-button prev" href="what-is.html">← 上一頁<span>什麼是骨質疏鬆</span></a>
@@ -119,3 +146,4 @@
     <script src="assets/js/self-check.js"></script>
   </body>
 </html>
+
